@@ -1,0 +1,496 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Protest+Strike&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Protest+Strike&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+$transparent_1: #ffffff50;
+$transparent_2: #ffffff95;
+$transparent_3: #708991;
+$text_dark: #051E27;
+$orange_1: #f2917c;
+$orange_2: #cc9588;
+$orange_3:#A66355;
+$top_font:"Protest Strike", sans-serif;
+$main_font: "Roboto", sans-serif;
+
+@mixin flex(){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@mixin flex_column(){
+    @include flex();
+    flex-direction: column;
+}
+@mixin background(){
+    background: rgb(0,26,36);
+    background: linear-gradient(59deg, rgba(0,26,36,1) 5%, rgba(24,45,50,1) 100%); 
+}
+@mixin basic_div(){
+    @include flex_column();
+    color:$text_dark;
+    background: $transparent_1;
+    border-radius: 25px;
+    padding: 10px;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: $main_font;
+    text-decoration: none;
+    list-style: none;
+}
+
+.App{
+    @include background();
+    min-height: 100vh;
+    min-width: 100vw;
+    @include flex();
+    flex-direction: column;
+}
+.App nav{
+    width: 100vw;
+    background: $transparent_1;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    z-index:99999;
+    box-shadow: rgba(170, 166, 170, 0.459) 0px 0px 16px;
+    @media(max-width: 767px){
+    padding: 6px;
+    }
+}
+
+.App nav div{
+    @include flex();
+}
+.App nav h1{
+    font-family: $top_font;
+    font-size: 30px;
+    font-weight: 500;
+    color: white;
+    @media(max-width: 767px){
+    font-size: 30-px;
+    }
+}
+.App nav h1 span{
+    color:#f2917c;
+    font-size:75px;
+    @media(max-width: 767px){
+        font-size:40px;
+    }
+}
+
+.App nav h3{
+    padding-left: 50px;
+    font-family: $main_font;
+    color:#f2917c;
+    transform: rotate(10deg);
+    font-style: italic;
+    font-size: 16px;
+    @media(max-width: 767px){
+    display: none;
+    }
+}
+
+.App nav #nav_class{
+    color: white;
+    font-size: 16px;
+    display: flex;
+}
+
+.App nav #nav_class span{
+    font-family: $top_font;
+    font-style: italic;
+    padding-right: -5px;
+    color:#f2917c;
+    font-size:25px;
+}
+
+.App nav #nav_class h2{
+    padding: 20px;
+    font-size:20px;
+    font-family: $main_font;
+    font-style: italic;
+}
+
+.App #main_signin{
+    @include flex();
+    flex-direction: column;
+    position: absolute;
+    bottom: 22%;
+    background: $transparent_1;
+    z-index: 50;
+    width: 80vw;
+    border-radius: 5px;
+    padding:15px;
+    box-shadow: rgba(170, 166, 170, 0.459) 0px 0px 16px;
+}
+
+.App #main_signin #signin_msg{
+    padding: 12px;
+    padding-top: 20px;
+    width: 80vw;
+    color: $orange_1;
+    border-radius: 15px;
+    font-size: 20px;
+    font-weight: 500;
+    font-style: italic;
+    box-shadow: rgba(170, 166, 170, 0.459) 0px 0px 16px;
+}
+
+.App #main_signin p{
+    color: $text_dark;
+    font-size: 16px;
+}
+
+.App #main_signin #warning_txt{
+    color: $text_dark;
+    font-size: 20px;
+    padding: 15px;
+    font-weight: 700;
+    font-family: $main_font;
+    color: white;
+    @include flex();
+    @media(max-width:767px){
+    font-size: 15px;  
+    }
+}
+
+.App #main_signin #warning_txt i{
+    padding-left: 5px;
+    padding-right: 5px;
+    @include flex();
+}
+
+.App #main_signin button{
+    background: $orange_2;
+    color:white;
+    padding: 8px;
+    outline:none; border:none;
+    border-radius: 10px;
+    height: 40px;
+    width: 300px;
+    font-size: 20px;
+    cursor: pointer;
+    &:hover{
+        background: $orange_1;
+    }
+}
+
+.App header{
+    height:100vh;
+    width: 100vw;
+    position: absolute;
+    @include flex();
+}
+
+.App header h1{
+    position: absolute;
+    top:40%;
+    text-align: center;
+    z-index: 50;
+    font-size: 20px;
+    font-family: $main_font;
+    font-style:italic;
+    text-shadow: 0 0 10px rgba(236, 127, 77, 0.349);
+    animation: glow 2s infinite alternate;
+    color: $orange_2;
+    @include flex();
+    @media(max-width:767px){
+        top:20%;
+        font-size: 18px;
+    }
+}
+
+
+.App #button_form{
+    width: 60%;
+    @include flex();
+    color: $text_dark;
+    display: flex;
+    flex-direction: column;
+}
+
+.App #button_form span{
+    font-size: 24px;
+}
+
+.App #button_form ul{
+    display: flex;
+}
+
+.App #button_form ul li{
+    padding:16px;
+    background:$orange_2;
+    margin:15px;
+    font-size: 20px;
+    border-radius: 5px;
+    color: $text_dark;
+    box-shadow: rgba(170, 166, 170, 0.459) 0px 0px 16px;
+    transition: 2s ease;
+    cursor: pointer;
+    &:hover{
+        background:$orange_1;
+    }
+}
+
+
+.App #entry_form{
+    @include flex();
+    @include  basic_div();
+    box-shadow: rgba(170, 166, 170, 0.459) 0px 0px 16px;
+    height: 50vh;
+    width: 30vw;
+    position: relative;
+    overflow: hidden;
+    @media(max-width:767px){
+    width: 90vw;
+    }
+}
+
+.App #entry_form h3{
+    @include flex();
+    width: 100%;
+    position: absolute;
+    top: 0;
+    background: $orange_1;
+    color: white;
+    padding: 16px;
+    font-style: italic;
+    font-size:16px;
+}
+
+.App #entry_form form{
+   display: flex;
+   flex-direction: column;
+   width: 300px;
+}
+
+.App #entry_form form label{
+    font-size: 20px;
+    font-weight: 500;
+    color: $text_dark;
+    padding-top: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.App #entry_form form label span{
+    font-size: 15px;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.App #entry_form form input{
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid $orange_2;
+    margin: 5px;
+    width: 100%;
+    font-size: 20px;
+    font-weight: 500;
+    color: $text_dark;
+    background: $transparent_2;
+}
+
+
+.App #entry_form form #submit_button{
+    margin-top: 33px;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: 500;
+    color: white;
+    background: $orange_2;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: 2s ease;
+    &:hover{
+        background: $orange_1;
+    }
+}
+
+.App #chat_page{
+    color:$text_dark;
+    background: $transparent_1;
+    border-radius: 25px;
+    height: 70vh;
+    width:80vw;
+    background: $transparent_1;
+    position: relative;
+    overflow: hidden;
+    z-index: 100000;
+    box-shadow: rgba(170, 166, 170, 0.459) 0px 0px 16px;
+}
+
+.App #chat_page h3{
+    position: absolute;
+    background: $orange_1;
+    top: 0;
+    left: 0;
+    color:white;
+    padding: 16px;
+    font-style: italic;
+    width: 100%;
+    @include flex();
+    box-shadow: rgba(170, 166, 170, 0.459) 0px 0px 16px;
+    @media(max-width:767px) {
+
+    }
+}
+
+.App #chat_page #alert_chat{ 
+    margin-top: 50px;
+    background: $transparent_2;
+    @include flex();
+    font-weight: 500;
+}
+
+.App #chat_page #alert_chat div{
+    @include flex();
+    flex-direction: column;
+    border-bottom: 1px solid $orange_2;
+    width: 100%;
+    padding:10px;
+}
+
+.App #chat_page #alert_chat div span{
+    font-size: 20px;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.App #chat_page form{
+    position: absolute;
+    bottom: 0;
+    background: #BBC1C4;
+    width: 100%;
+    padding: 20px;
+    display:flex;
+    justify-content: space-between;
+    border-top: 1px solid $orange_2;
+    @media(max-width:767px){
+        justify-content: center;
+        flex-direction: column;
+        }
+}
+
+.App #chat_page form input{
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid $orange_2;
+    margin: 5px;
+    font-size: 20px;
+    width: 85%;
+    font-weight: 500;
+    color: $text_dark;
+    background: $transparent_2;
+    @media(max-width:767px){
+        width: 100%;
+        }
+}
+
+.App #chat_page form #button_box{
+    @include flex();
+    @media(max-width:767px){
+        width: 100%;
+        }
+
+}
+
+.App #chat_page form #button_box button{
+    @include flex_column();
+    color:white;
+    outline:none;
+    border:none;
+    margin:2px;
+    padding: 7.5px;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 500;
+    background: $orange_2;
+    transition: 1s ease-in-out;
+    &:hover{
+        background: $orange_1;
+        cursor: pointer;
+    }
+    @media(max-width:767px){
+        width: 60%;
+        margin:10px;
+        }
+}
+
+.App #chat_page form #button_box button #subText{
+    font-size: 13px;
+    font-style: italic;
+}
+
+.App #chat_page #chatBoxArea{
+    background: $transparent_1;
+    height: 600px;
+    width: 100%;
+    overflow-y: auto;
+}
+
+
+.App #chat_page #chatBoxArea .recievedArea{ 
+    width: 100%;
+    padding: 15px;
+}
+
+
+.App #chat_page #chatBoxArea .recievedArea .recievedBox{ 
+    max-width: 400px;
+    background: $orange_2;
+    border-radius: 15px 15px 15px 0px;
+    padding: 8px;
+}
+
+
+.App #chat_page #chatBoxArea .recievedArea .recievedBox h5{
+    padding-bottom: 5px;
+    font-size: 12px;
+    font-style: italic;
+}
+
+.App #chat_page #chatBoxArea .recievedArea .recievedBox p{
+    padding-right: 8px;
+    padding-bottom: 5px;
+    font-size: 14px;
+}
+
+
+.App #chat_page #chatBoxArea .sentArea{ 
+    width: 100%;
+    padding: 15px;
+    display: flex; 
+    justify-content: flex-end; 
+}
+
+
+.App #chat_page #chatBoxArea .sentArea .sentBox{ 
+    max-width: 400px;
+    background: #CED3D5;
+    border-radius: 15px 15px 0px 15px;
+    padding: 8px;
+    border: 1px solid $orange_2;
+}
+
+
+.App #chat_page #chatBoxArea .sentArea .sentBox h5{
+    padding-bottom: 5px;
+    font-size: 12px;
+    font-style: italic;
+}
+
+.App #chat_page #chatBoxArea .sentArea .sentBox p{
+    padding-right: 8px;
+    padding-bottom: 5px;
+    font-size: 14px;
+}
